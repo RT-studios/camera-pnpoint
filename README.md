@@ -4,12 +4,16 @@ An add-on for Blender that allows matching camera perspectives with reference im
 The intrinsics module is the Calibrate operator, while the extrinsics module is the Pose solver. Both are inherently independent, but the Pose solver always assumes the camera intrinsics are correct. 
 
 So you can chose to use the add-on for different purposes:
-- To calibrate a camera with unknown parameters, such as lens distortion coefficients. You would normally use purposedly made pictures of well-defined calibration patterns, such as a checker grid, for this purpose.
+- To calibrate a camera with unknown parameters, such as lens distortion coefficients. You would normally use dedicated pictures of well-defined calibration patterns, such as a checker grid, for this purpose.
 - To find a point of view of a calibrated camera to match a reference picture. You would input the lens parameters manually before solving the camera pose in this case.
 - To find a point of view of an uncalibrated camera with unknown parameters. In this case you would need to perform a calibration first and then solve the camera pose.
 
 ### How do I get started?
-To be able to match a perspective with Camera PnPoint you need fundamentally two things: a reference image (of course!) and the coordinates of a few points in 3D space visible in the image. You will need at least 4 points for a camera pose solve and at least 6 points for a camera calibration, but more points may be required for a higher quality fit. See the section on Camera Calibration further below for some guidance.
+To be able to match a perspective with Camera PnPoint you need fundamentally two things: 
+- a reference image (of course!) and 
+- the coordinates of a few points in 3D space visible in the image. 
+
+You will need at least 4 points for a camera pose solve and at least 6 points for a camera calibration, but more points may be prefered for a higher quality fit. See the section on Camera Calibration further below for some guidance.
 The reference image is loaded as a movie clip in the Clip Editor. This will allow the definition of properties for the image such as the camera parameters, as well as the 2D point list.
 The 3D features will be defined in the 3D editor. You can use helpers for that such as manually created dummy geometry, or other references such as CAD data imported from external sources. Of course you can also chose not to use any reference geometry if you already know the coordinates of the points.
 
