@@ -1,7 +1,8 @@
 # Quick Start Guide
 ### What is Camera PnPoint?
 An add-on for Blender that allows matching camera perspectives with reference images by using a Perspective-n-Point approach. It is able to adjust camera intrinsics, meaning lens parameters such as Focal Length, as well as extrinsics, namely the camera position and orientation in space.
-The intrinsics module is the Calibrate operator, while the extrinsics module is the Pose solver. Both are inherently independent, but the Pose solver always assumes the camera intrinsics are correct. So you can chose to use the add-on for different purposes:
+The intrinsics module is the Calibrate operator, while the extrinsics module is the Pose solver. Both are inherently independent, but the Pose solver always assumes the camera intrinsics are correct. 
+So you can chose to use the add-on for different purposes:
 - To calibrate a camera with unknown parameters, such as lens distortion coefficients. You would normally use purposedly made pictures of well-defined calibration patterns, such as a checker grid, for this purpose.
 - To find a point of view of a calibrated camera to match a reference picture. You would input the lens parameters manually before solving the camera pose in this case.
 - To find a point of view of an uncalibrated camera with unknown parameters. In this case you would need to perform a calibration first and then solve the camera pose.
