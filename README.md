@@ -50,6 +50,8 @@ Since these parameters are linked to the reference image, they are always stored
 You can adjust the camera settings manually if you do have a calibrated camera with known parameters. Otherwise you can perform an automatic calibration based on the existing 2D-3D point pairs. 
 To perform an automated calibration, you first need to select the parameters you want to tune with the check boxes. The parameters unchecked will be left unchanged. For more details and hints on how to use the calibration tool, see the section on Camera Calibration further below.
 
+<img src="fig/CalibOp.jpg" width="400">
+
 [[fig/CalibOp.jpg | width=400]]
 
 ### Ho do I solve a camera Pose?
