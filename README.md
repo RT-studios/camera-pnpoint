@@ -70,13 +70,13 @@ In both cases the operator will perform the following tasks on the camera:
 # The Calibration module: Capabilities and Limitations
 It's worth noting that camera intrinsics calibration is a complex calculation in the fully generalized form. This is because it's a multi-dimensional problem where some of the degrees of freedom can be strongly correlated. The way this problem is typically approached is by taking many pictures of the same calibration pattern from different angles, in order to reduce the level of undetermination and better constrain the solution.
 
-When calibrating a camera with only one single image, it is advised to reduce the complexity of the problem by reducing the number of degrees-of-freedom, or in other words, keeping some of the parameters fixed. It is usually the case we can make some assumptions on the characteristics of the lens. For example, radial distortion coefficients are close to zero for medium and high focal lengths, and optical centers should be very close to the center of the image for uncropped pictures. The Focal length is probably the parameter with the highest sensitivity to the overall camera match, this is why it is enabled by default in the add-on.
+When calibrating a camera with only one single image, it is advised to reduce the complexity of the problem by reducing the number of degrees-of-freedom, or in other words, by keeping some of the parameters fixed. It is usually the case we can make some assumptions on the characteristics of the lens. For example, radial distortion coefficients are close to zero for high focal lengths, and optical centers should be very close to the center of the image for uncropped pictures. The Focal length is probably the parameter with the highest sensitivity to the overall camera match, this is why it is enabled by default in the add-on.
 
 The number and the position of the points also play a big role on the performance of the calibration. The following is a non-exhaustive summary to what to keep in mind when calibrating lens parameters, which hopefully provides a good starting point.
 
 |Parameter|When It Matters|Best Point Locations|
 |-|-|-|
-|Focal Length|High sensitivity, important to calibrate if unknown|3D points placed at different distances to the camera, sich as someOptical Centre in the foreground and some in the background|
+|Focal Length|High sensitivity, important to calibrate if unknown|3D points placed at different distances to the camera, such as some in the foreground and some in the background|
 |Optical Center|Not critical unless you suspect the image is cropped and it has a wide FoV|Points with 2D projections distributed around the edges of the image. More points is better|
 |Radial Distotion|Important for high FoV images|Just as with optical center, points with 2D projections distributed around the edges of the image. More points is better|
 
