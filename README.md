@@ -49,8 +49,8 @@ To perform an automated calibration, you first need to select the parameters you
 
 ### Ho do I solve a camera Pose?
 The Solve Pose operator is in charge of finding the camera position and orientation to match the image view. It has different behaviours depending on the current user selection.
-- If the active object is a camera, the operator understands the user wants to update this camera.
-- In any other case, the operator will create a new camera.
+_Case 1: the active object is a camera_. The operator understands the user wants to update this camera.
+Case 2: the active object is NOT a camera. The operator will create a new camera.
 
 In both cases the operator will perform the following tasks on the camera:
 - It sets its position and orientation, of course
