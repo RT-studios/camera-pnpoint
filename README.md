@@ -9,8 +9,8 @@ So you can chose to use the add-on for different purposes:
 - To find a point of view of an uncalibrated camera with unknown parameters. In this case you would need to perform a calibration first and then solve the camera pose.
 
 ### How do I get started?
-To be able to match a perspective with Camera PnPoint you need fundamentally two things: a reference image and the coordinates of a few points in 3D space visible in the image. You will need at least 4 points for a camera pose solve and at least 6 points for a camera calibration, but more points may be required for a higher quality fit. See section ----- for some guidance.
-The reference image is loaded as a movie clip in a Clip Editor. This will enable the definition of properties of the image such as the camera parameters, as well as the 2D point list.
+To be able to match a perspective with Camera PnPoint you need fundamentally two things: a reference image (of course!) and the coordinates of a few points in 3D space visible in the image. You will need at least 4 points for a camera pose solve and at least 6 points for a camera calibration, but more points may be required for a higher quality fit. See the section on Camera Calibration further below for some guidance.
+The reference image is loaded as a movie clip in the Clip Editor. This will allow the definition of properties for the image such as the camera parameters, as well as the 2D point list.
 The 3D features will be defined in the 3D editor. You can use helpers for that such as manually created dummy geometry, or other references such as CAD data imported from external sources. Of course you can also chose not to use any reference geometry if you already know the coordinates of the points.
 
 ### How do I add 3D points to the scene?
@@ -23,7 +23,7 @@ The 2D points are defined by the locations of tracks in the Clip. Track markers 
 The 2D points and 3D points are paired together based on the Track names and Object names in alphabetical order. There is no particular need to name them the same, they just need to be sorted equally. You can inspect the current names and their order in the Dope Sheet and the Outliner.
 The easy way to not have to worry much about the pairing is to create the 2D markers and the 3D points in the same sequence. This way the default names will be alphabetically aligned by default, for example:
 |Creation sequence|2D Marker Names|3D Point Names|
-|---|---|---|
+|-|-|-|
 |1|Track|Empty|
 |2|Track.001|Empty.001|
 |3|Track.002|Empty.002|
@@ -44,7 +44,7 @@ Since these parameters are linked to the reference image, they are always stored
 >**IMPORTANT:** The settings in the Clip's camera properties are considered "ground truth" by the PnP solver, and they are copied over to the actual camera in the 3D viewport when you perform a Pose solve. Always change the lens settings in the Clip's camera, not on the 3D camera, otherwise they will be overwritten by the Pose solver.
 
 You can adjust the camera settings manually if you do have a calibrated camera with known parameters. Otherwise you can perform an automatic calibration based on the existing 2D-3D point pairs. 
-To perform an automated calibration, you first need to select the parameters you want to tune with the check boxes. The parameters not selected will be left unchanged. For more details and hints on how to use the calibration tool, see the section .....
+To perform an automated calibration, you first need to select the parameters you want to tune with the check boxes. The parameters unchecked will be left unchanged. For more details and hints on how to use the calibration tool, see the section on Camera Calibration further below.
 
 >foto resum calibration operator
 
@@ -58,15 +58,15 @@ The Solve Pose operator is in charge of finding the camera position and orientat
 In both cases the operator will perform the following tasks on the camera:
 - It sets its position and orientation, of course.
 - It updates its lens parameters (Focal Length, Optical Center, Radial Distortion) **to match the ones in the Clip's camera**
-(remember those are always assumed correct, if they are not you should perform a calibration first).
+(remember those are always assumed correct. If they are not you should perform a calibration first).
 - It sets the reference image as a camera background with lens undistortion enabled
 
 > foto solve pose
 
 # The Calibration module: Capabilities and Limitations
-It's worth noting that camera intrinsics calibration is a complex calculation in the fully generalized form. This is because it is a multi-dimensional problem where some of the degrees of freedom can be strongly correlated. The way this problem is typically approached is by taking many pictures of the same calibration pattern from different angles, in order to reduce the level of undetermination and better constrain the solution.
+It's worth noting that camera intrinsics calibration is a complex calculation in the fully generalized form. This is because it's a multi-dimensional problem where some of the degrees of freedom can be strongly correlated. The way this problem is typically approached is by taking many pictures of the same calibration pattern from different angles, in order to reduce the level of undetermination and better constrain the solution.
 
-When calibrating a camera with only one single image, it is advised to reduce the complexity of the problem by reducing the number of degrees-of-freedom, in other words, keeping some of the parameters fixed. It is usually the case we can make some assumptions on the characteristics of the lens, for example, radial distortion coefficients are close to zero for medium and high focal lengths, and optical centers should be very close to the center of the image for uncropped pictures. The Focal length is probably the parameter with the highest sensitivity to the overall camera match, this is why it is enabled by default by the plugin.
+When calibrating a camera with only one single image, it is advised to reduce the complexity of the problem by reducing the number of degrees-of-freedom, or in other words, keeping some of the parameters fixed. It is usually the case we can make some assumptions on the characteristics of the lens. For example, radial distortion coefficients are close to zero for medium and high focal lengths, and optical centers should be very close to the center of the image for uncropped pictures. The Focal length is probably the parameter with the highest sensitivity to the overall camera match, this is why it is enabled by default in the add-on.
 
 The number and the position of the points also play a big role on the performance of the calibration. The following is a non-exhaustive summary to what to keep in mind when calibrating lens parameters, which hopefully provides a good starting point.
 
@@ -75,6 +75,7 @@ The number and the position of the points also play a big role on the performanc
 |Focal Length|High sensitivity, important to calibrate if unknown|3D points placed at different distances to the camera, sich as someOptical Centre in the foreground and some in the background|
 |Optical Center|Not critical unless you suspect the image is cropped and it has a wide FoV|Points with 2D projections distributed around the edges of the image. More points is better|
 |Radial Distotion|Important for high FoV images|Just as with optical center, points with 2D projections distributed around the edges of the image. More points is better|
+
 
 
 
