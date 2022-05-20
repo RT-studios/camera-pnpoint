@@ -9,7 +9,7 @@ The intrinsics module is the Calibrate operator, while the extrinsics module is 
 
 ### How do I get started?
 To be able to match a perspective with Camera PnPoint you need fundamentally two things: a reference image and the coordinates of a few points in 3D space visible in the image. You will need at least 4 points for a camera pose solve and at least 6 points for a camera calibration, but more points may be required for a higher quality fit. See section ----- for some guidance.
-The reference image is loaded as a movie clip in a Clip Editor. This will enable us to define properties of the image such as the camera parameters, as well as the 2D point list.
+The reference image is loaded as a movie clip in a Clip Editor. This will enable the definition of properties of the image such as the camera parameters, as well as the 2D point list.
 The 3D features will be defined in the 3D editor. You can use helpers for that such as manually created dummy geometry, or other references such as CAD data imported from external sources. Of course you can also chose not to use any reference geometry if you already know the coordinates of the points.
 
 ### How do I add 3D points to the scene?
