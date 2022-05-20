@@ -1,4 +1,3 @@
-# camera-pnpoint
 # Quick Start Guide
 ### What is Camera PnPoint?
 An add-on for Blender that allows matching camera perspectives with reference images by using a Perspective-n-Point approach. It is able to adjust camera intrinsics, meaning lens parameters such as Focal Length, as well as extrinsics, namely the camera position and orientation in space.
@@ -40,7 +39,7 @@ The PnP solver always assumes the camera intrinsic parameters are well known and
 - Radial Distortion Coefficients K1, K2 and K3 (compatible with Polynomial and Brown distortion models)
 
 Since these parameters are linked to the reference image, they are always stored in the Camera properties of the Clip. These properties can be found in the N panel of the Clip Editor, under Camera...
->IMPORTANT: The settings in the Clip's camera properties are considered "ground truth" by the PnP solver, and they are copied over to the actual camera in the 3D viewport when you perform a Pose solve. Always change the lens settings in the Clip's camera, not on the 3D camera, otherwise they will be overwritten by the Pose solver.
+>**IMPORTANT:** The settings in the Clip's camera properties are considered "ground truth" by the PnP solver, and they are copied over to the actual camera in the 3D viewport when you perform a Pose solve. Always change the lens settings in the Clip's camera, not on the 3D camera, otherwise they will be overwritten by the Pose solver.
 
 You can adjust the camera settings manually if you do have a calibrated camera with known parameters. Otherwise you can perform an automatic calibration based on the existing 2D-3D point pairs. 
 To perform an automated calibration, you first need to select the parameters you want to tune with the check boxes. The parameters not selected will be left unchanged. For more details and hints on how to use the calibration tool, see the section .....
@@ -49,13 +48,13 @@ To perform an automated calibration, you first need to select the parameters you
 
 ### Ho do I solve a camera Pose?
 The Solve Pose operator is in charge of finding the camera position and orientation to match the image view. It has different behaviours depending on the current user selection.
-_Case 1: the active object is a camera_. The operator understands the user wants to update this camera.
-Case 2: the active object is NOT a camera. The operator will create a new camera.
+**Case 1: the active object is a camera.** The operator understands the user wants to update this camera.
+**Case 2: the active object is NOT a camera.** The operator will create a new camera.
 
 In both cases the operator will perform the following tasks on the camera:
-- It sets its position and orientation, of course
-- It updates its lens parameters (Focal Length, Optical Center, Radial Distortion) *to match the ones in the Clip's camera*
-(remember those are always assumed correct, if they are not you should perform a calibration first)
+- It sets its position and orientation, of course.
+- It updates its lens parameters (Focal Length, Optical Center, Radial Distortion) **to match the ones in the Clip's camera**
+(remember those are always assumed correct, if they are not you should perform a calibration first).
 - It sets the reference image as a camera background with lens undistortion enabled
 
 > foto solve pose
