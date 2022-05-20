@@ -50,9 +50,7 @@ Since these parameters are linked to the reference image, they are always stored
 You can adjust the camera settings manually if you do have a calibrated camera with known parameters. Otherwise you can perform an automatic calibration based on the existing 2D-3D point pairs. 
 To perform an automated calibration, you first need to select the parameters you want to tune with the check boxes. The parameters unchecked will be left unchanged. For more details and hints on how to use the calibration tool, see the section on Camera Calibration further below.
 
-<img src="fig/CalibOp.jpg" width="400">
-
-[[fig/CalibOp.jpg | width=400]]
+<img src="fig/CalibOp.jpg" width="600">
 
 ### Ho do I solve a camera Pose?
 The Solve Pose operator is in charge of finding the camera position and orientation to match the image view. It has different behaviours depending on the current user selection.
@@ -67,7 +65,7 @@ In both cases the operator will perform the following tasks on the camera:
 (remember those are always assumed correct. If they are not you should perform a calibration first).
 - It sets the reference image as a camera background with lens undistortion enabled
 
-> foto solve pose
+<img src="fig/PoseOp.jpg" width="600">
 
 # The Calibration module: Capabilities and Limitations
 It's worth noting that camera intrinsics calibration is a complex calculation in the fully generalized form. This is because it's a multi-dimensional problem where some of the degrees of freedom can be strongly correlated. The way this problem is typically approached is by taking many pictures of the same calibration pattern from different angles, in order to reduce the level of undetermination and better constrain the solution.
