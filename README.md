@@ -64,17 +64,17 @@ In both cases the operator will perform the following tasks on the camera:
 > foto solve pose
 
 # The Calibration module: Capabilities and Limitations
-It's worth noting that camera intrinsics calibration is a complex calculation in the fully generalized form. This is because it is a multi-dimensional problem where some of the degrees of freedom can be strongly correlated. The way this problem is typically approach is by taking many pictures of the same calibration pattern from different angles, in order to reduce the level of undetermination and better constrain the solution.
+It's worth noting that camera intrinsics calibration is a complex calculation in the fully generalized form. This is because it is a multi-dimensional problem where some of the degrees of freedom can be strongly correlated. The way this problem is typically approached is by taking many pictures of the same calibration pattern from different angles, in order to reduce the level of undetermination and better constrain the solution.
 
-When calibrating a camera with only one single image, it is advised to reduce the complexity of the problem by reducing the number of degrees-of-freedom, in other words, keeping some of the parameters fixed. It is usually the case we can make some assumptions on the characteristics of the lens, for example, radial distortion coefficients are close to zero for medium and high focal lengths, and optical centers should be very close to the center of the image for uncropped pictures. The Focal length is probably the parameter with the highest sensitivity to the overall camera match, this is way it is enabled by default by the plugin.
+When calibrating a camera with only one single image, it is advised to reduce the complexity of the problem by reducing the number of degrees-of-freedom, in other words, keeping some of the parameters fixed. It is usually the case we can make some assumptions on the characteristics of the lens, for example, radial distortion coefficients are close to zero for medium and high focal lengths, and optical centers should be very close to the center of the image for uncropped pictures. The Focal length is probably the parameter with the highest sensitivity to the overall camera match, this is why it is enabled by default by the plugin.
 
-The number and the position of the points also play a big roll on the performance of the calibration. the following is a non-exhaustive summary to camera calibration which hopefully provides a good starting point.
+The number and the position of the points also play a big role on the performance of the calibration. The following is a non-exhaustive summary to what to keep in mind when calibrating lens parameters, which hopefully provides a good starting point.
 
 |Parameter|When It Matters|Best Point Locations|
 |-|-|-|
 |Focal Length|High sensitivity, important to calibrate if unknown|3D points placed at different distances to the camera, sich as someOptical Centre in the foreground and some in the background|
-|Optical Center|Not critical unless you suspect the image is cropped and it has a wide FoV|Points with 2D projections distributed around the edges of the image, more points is better|
-|Radial Distotion|Important for high FoV images|Points with 2D projections distributed around the edges of the image, more points is better|
+|Optical Center|Not critical unless you suspect the image is cropped and it has a wide FoV|Points with 2D projections distributed around the edges of the image. More points is better|
+|Radial Distotion|Important for high FoV images|Just as with optical center, points with 2D projections distributed around the edges of the image. More points is better|
 
 
 
