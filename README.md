@@ -13,7 +13,7 @@ To be able to match a perspective with Camera PnPoint you need fundamentally two
 - a reference image (of course!) and 
 - the coordinates of a few points in 3D space visible in the image. 
 
-You will need at least 4 points for a camera pose solve and at least 6 points for a camera calibration, but more points may be prefered for a higher quality fit. See the section on Camera Calibration further below for some guidance.
+You will need at least 4 points for a camera pose solve and at least 6 points for a camera calibration, but more points may be preferred for a higher quality fit. See the section on Camera Calibration further below for some guidance.
 The reference image is loaded as a movie clip in the Clip Editor. This will allow the definition of properties for the image such as the camera parameters, as well as the 2D point list.
 The 3D features will be defined in the 3D editor. You can use helpers for that such as manually created dummy geometry, or other references such as CAD data imported from external sources. Of course you can also chose not to use any reference geometry if you already know the coordinates of the points.
 
@@ -21,7 +21,7 @@ The 3D features will be defined in the 3D editor. You can use helpers for that s
 the 3D points are defined by the location of objects found in a dedicated collection. Any object can be used for this purpose, for example empty objects. Just make sure they are all stored in isolation in a dedicated collection.
 
 ### How do I add 2D points to the image?
-The 2D points are defined by the locations of tracks in the Clip. Track markers can be added with the add button or with Ctrl+left click on the image itself. 
+The 2D points are defined by the locations of tracks in the Clip. Track markers can be added with the add button or with Ctrl+Left click on the image itself. 
 
 ### How does the Add-on know how to pair the 3D and 2D points?
 The 2D points and 3D points are paired together based on the Track names and Object names in alphabetical order. There is no particular need to name them the same, they just need to be sorted equally. You can inspect the current names and their order in the Dope Sheet and the Outliner.
@@ -52,8 +52,8 @@ To perform an automated calibration, you first need to select the parameters you
 
 <img src="fig/CalibOp.jpg" width="600">
 
-### Ho do I solve a camera Pose?
-The Solve Pose operator is in charge of finding the camera position and orientation to match the image view. It has different behaviours depending on the current user selection.
+### How do I solve a camera Pose?
+The Solve Pose operator is in charge of finding the camera position and orientation to match the image view. It has different behaviors depending on the current user selection.
 
 **The active object is a camera.** The operator understands the user wants to update this camera.
 
