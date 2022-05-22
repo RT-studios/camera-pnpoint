@@ -36,7 +36,7 @@ The easy way to not have to worry much about the pairing is to create the 2D mar
 |6|Track.005|Empty.005|
 
 The final step to let the addon know which 3D objects are the 3D points is to point to the collection where they are stored in the add-on panel. 
->Note: if for any reason you would create more 2D points than 3D points, or the other way around, the calibration and Pose solvers will throw a warning but they will still try to find a match, ignoring the extra points at the bottom of the longest list.
+>Note: if for any reason you would create more 2D points than 3D points, or the other way around, the calibration and pose solvers will throw a warning but they will still try to find a match, ignoring the extra points at the bottom of the longest list.
 
 ### How do I Calibrate a camera?
 The PnP solver always assumes the camera intrinsic parameters are well known and calibrated for the reference image. This involves the following parameters:
