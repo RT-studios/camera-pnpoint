@@ -76,9 +76,9 @@ The number and the position of the points also play a big role on the performanc
 
 |Parameter|When It Matters|Best Point Locations|
 |-|-|-|
-|Focal Length|High sensitivity, important to calibrate if unknown|3D points placed at different distances to the camera, such as some in the foreground and some in the background|
-|Optical Center|Not critical unless you suspect the image is cropped and it has a wide FoV|Points with 2D projections distributed around the edges of the image. More points is better|
-|Radial Distotion|Important for high FoV images|Just as with optical center, points with 2D projections distributed around the edges of the image. More points is better|
+|Focal Length|High sensitivity, important to calibrate if unknown.|3D points placed at different distances to the camera, such as some in the foreground and some in the background.|
+|Optical Center|Not critical unless you suspect the image is cropped and it has a wide FoV.|Points with 2D projections distributed around the edges of the image. More points is better.|
+|Radial Distortion|Important for high FoV images.|Just as with optical center, points with 2D projections distributed around the edges of the image. More points is better.|
 
 
 
