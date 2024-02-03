@@ -82,6 +82,22 @@ The number and the position of the points also play a big role on the performanc
 
 
 
+# Version history
 
+v0.0.7
+
+- Bug fix: addon would crash when attempting to solve if the scene frame number was bigger than 1, and the tracks where not set in previous frames
+
+- Bug fix: addon would crash when attempting to solve if there was no active object in the scene
+
+- For convenience, now the addon reports the individual reprojection error of each point pair in the blender console. This may be useful for finetuning or troubleshooting wrongly placed markers.
+
+v0.0.6
+
+- Added support for Blender 3.5, see [7dea18b3aa](https://projects.blender.org/blender/blender/commit/7dea18b3aa). 
+
+v0.0.5 
+
+- Initial beta release
 
 
